@@ -41,3 +41,38 @@
         }
     }
 }
+
+.company {
+    margin-bottom: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
+
+    &__list {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include phone {
+            grid-template-columns: 1fr;
+        }
+
+        & li {
+            @include flex-center;
+            min-height: 200px;
+            padding: 30px 36px;
+            border: var(--border);
+            border-radius: var(--border-radius-small);
+
+            & img {
+                filter: grayscale(1);
+            }
+        }
+    }
+}

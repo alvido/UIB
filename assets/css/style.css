@@ -1146,6 +1146,50 @@ textarea {
   gap: 10px;
 }
 
+.company {
+  margin-bottom: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
+}
+.company__list {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1023px) {
+  .company__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .company__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .company__list {
+    grid-template-columns: 1fr;
+  }
+}
+.company__list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 200px;
+  padding: 30px 36px;
+  border: var(--border);
+  border-radius: var(--border-radius-small);
+}
+.company__list li img {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
 .banner {
   padding-block: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
 }
