@@ -1054,6 +1054,9 @@ textarea {
   position: absolute;
   offset: 0;
 }
+.banner .column {
+  width: 100%;
+}
 .banner .search-input {
   width: 100%;
   max-width: 900px;
