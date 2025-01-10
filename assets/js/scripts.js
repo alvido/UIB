@@ -1,22 +1,21 @@
 const init = async () => {
+
   // Burger Menu Open //
   let registrBtn = document.getElementById("registrBtn");
   let registrMethod = document.querySelector(".registration__method");
 
   if (registrBtn && registrMethod) {
     registrBtn.addEventListener("click", function (e) {
-      e.stopPropagation(); // Prevent the click from propagating to the document
+      e.stopPropagation();
       registrMethod.classList.toggle("active");
     });
 
     document.addEventListener("click", event => {
-      // Check if the clicked target is outside of the registrMethod and registrBtn
       if (!registrMethod.contains(event.target) && event.target !== registrBtn) {
         registrMethod.classList.remove("active");
       }
     });
   }
-
   // Burger Menu Open //
 
   // Fixed Header //
@@ -44,6 +43,218 @@ const init = async () => {
     });
   }
   // Fixed Header //
+
+  //news tabs
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const category = tab.dataset.category;
+
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      document.querySelectorAll('.authorization__block').forEach(block => {
+        block.classList.toggle('active', block.dataset.category === category);
+      });
+    });
+  });
+  //news tabs
+
+  //modal
+  function openModal() {
+    const registrModal = document.getElementById('registrModal');
+    const body = document.querySelector('body');
+
+    if (registrModal) {
+      registrModal.style.display = 'flex';
+      body.classList.add('lock');
+    }
+
+    function closeModal() {
+      registrModal.style.display = 'none';
+      body.classList.remove('lock');
+    }
+
+    const closeModalButton = document.getElementById('closeModal');
+    if (closeModalButton) {
+      closeModalButton.addEventListener('click', closeModal);
+    }
+
+    window.addEventListener('click', function (event) {
+      if (event.target === registrModal) {
+        closeModal();
+      }
+    });
+  }
+  window.openModal = openModal;
+  //modal share
+
+  // validation
+  // checkButton.addEventListener('click', (event) => {
+  //   event.preventDefault(); // Отключаем стандартное поведение кнопки (если форма есть)
+
+  //   const nameRegExp = /^[A-Za-zА-Яа-я ]+$/;
+  //   const phoneRegExp = /^\+\d{2}\(\d{3}\)\d{3}-\d{4}$/;
+  //   const emailRegExp = /^[a-z0-9\.-]+@[a-z0-9_\.-]+\.[a-z]{2,}$/;
+
+  //   const nameInput = document.querySelector('.input__name');
+  //   const phoneInput = document.querySelector('.input__phone');
+  //   const emailInput = document.querySelector('.input__email');
+
+  //   let isValid = true;
+
+  //   // Проверка имени
+  //   if (!nameRegExp.test(nameInput.value)) {
+  //     nameInput.classList.add('error');
+  //     alert('Имя должно содержать только буквы и пробелы!');
+  //     isValid = false;
+  //   } else {
+  //     nameInput.classList.remove('error');
+  //   }
+
+  //   // Проверка телефона
+  //   if (!phoneRegExp.test(phoneInput.value)) {
+  //     phoneInput.classList.add('error');
+  //     alert('Телефон должен быть в формате +XX(XXX)XXX-XXXX');
+  //     isValid = false;
+  //   } else {
+  //     phoneInput.classList.remove('error');
+  //   }
+
+  //   // Проверка email
+  //   if (!emailRegExp.test(emailInput.value)) {
+  //     emailInput.classList.add('error');
+  //     alert('Введите корректный email!');
+  //     isValid = false;
+  //   } else {
+  //     emailInput.classList.remove('error');
+  //   }
+
+  //   // Финальная проверка
+  //   if (isValid) {
+  //     alert('Все поля заполнены корректно!');
+  //   }
+  // });
+  // validation
+
+
+
+
+
+  const inputs = document.querySelectorAll('input, select, textarea');
+
+  // Добавляем обработчики событий для каждого элемента
+  inputs.forEach((element) => {
+    const eventType = element.type === "checkbox" || element.tagName === "SELECT" || element.type === "radio" ? "change" : "input";
+    element.addEventListener(eventType, (event) => validateInput(event.target));
+  });
+
+  function validateInput(element) {
+    let isValid = true;
+    const error = element.nextElementSibling;
+
+    if (!error) {
+      console.warn(`Не найден элемент для отображения ошибок для ${element.id}`);
+      return;
+    }
+
+    // Email validation
+    if (element.type === 'email') {
+      console.log('email', element.value);
+      if (!element.value || !/^[a-z0-9\.-]+@[a-z0-9_\.-]+\.[a-z]{2,}$/.test(element.value)) {
+        isValid = false;
+        element.classList.add('error');
+        error.textContent = 'Введите корректный e-mail';
+      } else {
+        element.classList.remove('error');
+        element.classList.add('verified');
+        error.textContent = '';
+      }
+    }
+
+    // Phone validation
+    if (element.type === 'tel') {
+      console.log('phone', element.value);
+      if (!element.value || !/^\+?[0-9]{10,15}$/.test(element.value)) {
+        isValid = false;
+        element.classList.add('error');
+        error.textContent = 'Введите корректный номер телефона';
+      } else {
+        element.classList.remove('error');
+        element.classList.add('verified');
+        error.textContent = '';
+      }
+    }
+
+    // Password validation
+    if (element.type === 'password') {
+      console.log('password', element.value);
+      if (!element.value || element.value.length < 6) {
+        isValid = false;
+        element.classList.add('error');
+        error.textContent = 'Пожалуйста, заполните поле';
+      } else {
+        element.classList.remove('error');
+        element.classList.add('verified');
+        error.textContent = '';
+      }
+    }
+
+    // Validate confirm password only if password is valid
+    const password = document.querySelector('[data-validate="password"]');
+    const confirmPassword = document.querySelector('[data-validate="confirm-password"]');
+    const errorConfirm = confirmPassword.nextElementSibling;
+    console.log('confirmPassword', confirmPassword.value);
+    if (confirmPassword && confirmPassword.value !== password.value) {
+      isValid = false;
+      confirmPassword.classList.add('error');
+      errorConfirm.textContent = 'Пароли не совпадают';
+    } else {
+      confirmPassword.classList.remove('error');
+      confirmPassword.classList.remove('verified');
+      errorConfirm.textContent = '';
+    }
+
+    // Text input validation
+    if (element.type === 'text') {
+      console.log('text', element.value);
+      if (element.value.length < 2 || !/^[A-Za-zА-Яа-я ]+$/.test(element.value)) {
+        isValid = false;
+        element.classList.add('error');
+        error.textContent = 'Пожалуйста, заполните поле';
+      } else {
+        element.classList.remove('error');
+        element.classList.add('verified');
+        error.textContent = '';
+      }
+    }
+
+    // Select validation
+    if (element.tagName === 'SELECT') {
+      console.log('select', element.value);
+      if (!element.value) {
+        isValid = false;
+        element.classList.add('error');
+        error.textContent = 'Пожалуйста, выберите значение';
+      } else {
+        element.classList.remove('error');
+        element.classList.add('verified');
+        error.textContent = '';
+      }
+    }
+  }
+
+  //
+
+
+
+
+
+
+
+
+
+
+
 
   // select
   var x, i, j, l, ll, selElmnt, a, b, c;

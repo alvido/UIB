@@ -58,3 +58,15 @@
     @include fluid-text(55, 26);
     font-weight: 700;
 }
+
+.text {
+    font-size: 20px;
+}
+
+.green {
+    color: var(--color-green);
+}
+
+.medium {
+    font-weight: 500;
+}

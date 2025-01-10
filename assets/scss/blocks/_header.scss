@@ -2,6 +2,7 @@
     position: relative;
     padding: 15px 0;
     border-bottom: var(--border);
+    background: var(--color-white);
 
     &.fixed {
         position: fixed;
@@ -9,6 +10,10 @@
         right: 0;
         top: 0;
         z-index: 2;
+
+        & .logo img {
+            height: 60px;
+        }
     }
 
     @include phone {

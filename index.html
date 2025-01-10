@@ -43,7 +43,7 @@
                                 Зарегистрироваться
                             </button>
                             <div class="registration__method">
-                                <button class="button button--green">
+                                <button class="button button--green" onclick="openModal()">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -61,7 +61,7 @@
                                     </svg>
                                     Как студент
                                 </button>
-                                <button class="button button--green">
+                                <button class="button button--green" onclick="openModal()">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -100,9 +100,11 @@
             </div>
         </header>
         <main class="main" id="primary">
-            <h1 class="page__title center">Найди свою работу с UIB</h1>
-            <section class="banner" style="background: url(assets/images/banner.jpg) no-repeat top /cover;">
-                <div class="column">
+            <section class="banner">
+                <div class="container">
+                    <h1 class="page__title center">Найди свою работу с UIB</h1>
+                </div>
+                <div class="column" style="background: url(assets/images/banner.jpg) no-repeat top /cover;">
                     <div class="search-input">
                         <button class="icon">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
@@ -118,6 +120,128 @@
                         <input type="text" id="searh" placeholder="Должность, профессия, компания...">
                     </div>
                     <a class="center" href="#">Я работодатель</a>
+                </div>
+            </section>
+            <section class="authorization">
+                <div class="container">
+                    <h2>Авторизация</h2>
+                    <div class="row">
+                        <div class="column">
+                            <img src="assets/images/login.png" alt="authorization">
+                        </div>
+                        <div class="column">
+                            <ul class="authorization__tabs">
+                                <li class="tab active" data-category="category1">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M2.02275 4.20306C2.29811 4.20306 2.52134 4.42629 2.52134 4.70165V11.3494C2.52134 11.6248 2.29811 11.848 2.02275 11.848C1.7474 11.848 1.52417 11.6248 1.52417 11.3494V4.70165C1.52417 4.42629 1.7474 4.20306 2.02275 4.20306Z"
+                                            fill="#007F65" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.0001 14.5085C8.86514 14.5085 7.74811 14.7917 6.75021 15.3323C5.75232 15.8729 4.90506 16.6541 4.28519 17.6048C4.13481 17.8354 3.8259 17.9005 3.59523 17.7501C3.36457 17.5997 3.29949 17.2908 3.44989 17.0602C4.16035 15.9705 5.13144 15.0752 6.27523 14.4556C7.41898 13.8359 8.69928 13.5113 10.0001 13.5113C11.301 13.5113 12.5812 13.8359 13.725 14.4556C14.8688 15.0752 15.8399 15.9705 16.5504 17.0602C16.7007 17.2908 16.6357 17.5997 16.405 17.7501C16.1743 17.9005 15.8654 17.8354 15.715 17.6048C15.0952 16.6541 14.2479 15.8729 13.25 15.3323C12.2521 14.7917 11.1351 14.5085 10.0001 14.5085Z"
+                                            fill="#007F65" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M9.8424 1.56956C9.94478 1.53545 10.0554 1.53545 10.1578 1.56956L18.1351 4.22867C18.3387 4.29653 18.476 4.48707 18.476 4.70167C18.476 4.91627 18.3387 5.10681 18.1351 5.17467L10.1578 7.83377C10.0554 7.86787 9.94478 7.86787 9.8424 7.83377L1.86509 5.17467C1.66149 5.10681 1.52417 4.91627 1.52417 4.70167C1.52417 4.48707 1.66149 4.29653 1.86509 4.22867L9.8424 1.56956ZM3.59941 4.70167L10.0001 6.83521L16.4008 4.70167L10.0001 2.56811L3.59941 4.70167Z"
+                                            fill="#007F65" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M6.90497 5.8463C7.10806 6.03226 7.12195 6.34763 6.93595 6.55072C6.3915 7.1453 6.03178 7.88546 5.90064 8.68093C5.76951 9.47634 5.87264 10.2928 6.19745 11.0307C6.52226 11.7686 7.05474 12.396 7.72996 12.8365C8.40517 13.277 9.194 13.5113 10.0002 13.5113C10.8064 13.5113 11.5952 13.277 12.2704 12.8365C12.9456 12.396 13.4781 11.7686 13.8029 11.0307C14.1277 10.2928 14.2308 9.47634 14.0997 8.68093C13.9686 7.88546 13.6089 7.1453 13.0644 6.55072C12.8784 6.34763 12.8923 6.03226 13.0954 5.8463C13.2985 5.66034 13.6138 5.67422 13.7998 5.87729C14.4749 6.61454 14.921 7.53233 15.0836 8.51873C15.2462 9.50513 15.1183 10.5174 14.7155 11.4324C14.3128 12.3474 13.6525 13.1254 12.8152 13.6717C11.978 14.2179 10.9999 14.5084 10.0002 14.5084C9.00048 14.5084 8.0224 14.2179 7.18511 13.6717C6.34782 13.1254 5.68758 12.3474 5.28481 11.4324C4.88203 10.5174 4.75415 9.50513 4.91675 8.51873C5.07936 7.53233 5.52542 6.61454 6.20057 5.87729C6.38651 5.67422 6.70188 5.66034 6.90497 5.8463Z"
+                                            fill="#007F65" />
+                                    </svg>
+                                    Как студент
+                                </li>
+                                <li class="tab" data-category="category2">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.17383 17.5V15.8333C1.17383 14.9493 1.52502 14.1014 2.15014 13.4763C2.77526 12.8512 3.62311 12.5 4.50716 12.5L8.27939 12.5"
+                                            stroke="#007F65" stroke-width="1.14286" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M7.84041 9.16667C9.68136 9.16667 11.1737 7.67428 11.1737 5.83333C11.1737 3.99238 9.68136 2.5 7.84041 2.5C5.99946 2.5 4.50708 3.99238 4.50708 5.83333C4.50708 7.67428 5.99946 9.16667 7.84041 9.16667Z"
+                                            stroke="#007F65" stroke-width="1.14286" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12.4952 12.4681L9.98901 12.4682V14.4682V17.5L18.2557 17.5V14.4682V12.4681H15.9099M12.4952 12.4681V10.8578L15.9099 10.8578V12.4681M12.4952 12.4681H15.9099"
+                                            stroke="#007F65" stroke-width="1.14286" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Как работодатель
+                                </li>
+                            </ul>
+
+                            <div class="authorization__container">
+                                <div class="authorization__block active" data-category="category1">
+                                    <form id="loginStudent">
+                                        <div class="form-group">
+                                            <label for="email">E-mail</label>
+                                            <input type="email" id="email" autocomplete="email" />
+                                            <span class="error" id="emailError" data-error="email"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Пароль</label>
+                                            <input type="password" name="new-password" id="password"
+                                                autocomplete="new-password" data-validate="password" />
+                                            <span class="error" id="passwordError" data-error="password"></span>
+                                        </div>
+                                        <div class="actions">
+                                            <a href="#">Зарегестрироваться</a>
+                                            <a href="#">Забыли пароль?</a>
+                                        </div>
+                                        <button class="button" type="submit">Войти в личный кабинет</button>
+                                    </form>
+                                </div>
+
+                                <div class="authorization__block" data-category="category2">
+                                    <form id="loginEmployment">
+                                        <div class="form-group">
+                                            <label for="email">E-mail</label>
+                                            <input type="email" id="email" autocomplete="email" />
+                                            <span class="error" id="emailError" data-error="email"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Пароль</label>
+                                            <input type="password" name="new-password" id="password"
+                                                autocomplete="new-password" data-validate="password" />
+                                            <span class="error" id="passwordError" data-error="password"></span>
+                                        </div>
+                                        <div class="actions">
+                                            <a href="#">Зарегестрироваться</a>
+                                            <a href="#">Забыли пароль?</a>
+                                        </div>
+                                        <button class="button" type="submit">Войти в личный кабинет</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="vacancies popular">
+                <div class="container">
+                    <h2>Популярные вакансии</h2>
+                    <ul class="vacancies__list vacancies__list--popular">
+                        <li>
+                            <div class="column">
+                                <h3>Маркетолог</h3>
+                                <p class="text">200 000 ₸</p>
+                            </div>
+                            <span class="text green medium">45 вакансий</span>
+                        </li>
+                        <li>
+                            <div class="column">
+                                <h3>IT-специалист</h3>
+                                <p class="text">300 000 ₸</p>
+                            </div>
+                            <span class="text green medium">25 вакансий</span>
+                        </li>
+                        <li>
+                            <div class="column">
+                                <h3>Бухгалтер</h3>
+                                <p class="text">350 000 ₸</p>
+                            </div>
+                            <span class="text green medium">18 вакансий</span>
+                        </li>
+                    </ul>
                 </div>
             </section>
         </main>
@@ -250,6 +374,66 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Модальное окно -->
+        <div id="registrModal" class="modal">
+            <div class="modal-content">
+                <button class="icon close" id="closeModal">Close</button>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="email">Логин (e-mail)</label>
+                        <input type="email" id="email" autocomplete="email" />
+                        <span class="error" id="emailError" data-error="email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" id="phone" autocomplete="tel" />
+                        <span class="error" id="phoneError" data-error="tel"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" name="new-password" id="password" autocomplete="new-password"
+                            data-validate="password" />
+                        <span class="error" id="passwordError" data-error="password"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Подтверждение пароля</label>
+                        <input class="error" type="password" name="confirm-password" id="confirmPassword"
+                            autocomplete="new-password" data-validate="confirm-password" />
+                        <span class="error" id="confirmPasswordError" data-error="confirm-password">Пожалуйста,
+                            заполните поле</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="fio">ФИО</label>
+                        <input type="text" id="fio" autocomplete="name" />
+                        <span class="error" id="fioError" data-error="text"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Курс</label>
+                        <div class="custom-select">
+                            <select id="course" autocomplete="off">
+                                <option value="">Выберите курс</option>
+                                <option value="1">Курс 1</option>
+                                <option value="2">Курс 2</option>
+                            </select>
+                        </div>
+                        <span class="error" id="courseError" data-error="select"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="op">ОП</label>
+                        <div class="custom-select">
+                            <select id="op" autocomplete="off">
+                                <option value="">Выберите ОП</option>
+                                <option value="1">ОП 1</option>
+                                <option value="2">ОП 2</option>
+                            </select>
+                        </div>
+                        <span class="error" id="opError" data-error="select"></span>
+                    </div>
+                    <button class="button" type="submit">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script src="assets/js/jquery-3.7.1.min.js"></script>

@@ -1,19 +1,32 @@
 .banner {
-    min-height: 550px;
-    @include flex-center;
-    position: relative;
-    z-index: 1;
-
-    &::after {
-        content: '';
-        position: absolute;
-        offset: 0;
-    }
+    padding-block: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
 
     & .column {
+        margin-top: 30px;
+        padding: 0 20px;
         width: 100%;
-    }
+        min-height: 550px;
+        @include flex-center;
+        position: relative;
+        z-index: 1;
 
+        @include mobile {
+            min-height: 400px;
+        }
+
+        @include phone {
+            min-height: 300px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background: #004235CC;
+            backdrop-filter: blur(15px)
+        }
+    }
 
     .search-input {
         width: 100%;
@@ -25,12 +38,25 @@
         padding: 15px 30px;
         background: var(--color-white);
         border-radius: var(--border-radius-small);
+        overflow: hidden;
+
+        @include mobile {
+            padding: 0 10px;
+            gap: 10px;
+
+            & svg {
+                width: 30px;
+            }
+        }
 
         & input {
-            font-size: 18px;
+            padding: 0;
+            @include fluid-text(18, 14);
+            border: none;
 
             &::placeholder {
                 font-style: italic;
+                padding: 0 2px;
             }
         }
 
@@ -50,4 +76,144 @@
     }
 
 
+}
+
+.authorization {
+    margin-bottom: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
+
+    & .row {
+        margin-top: 40px;
+        flex-wrap: nowrap;
+        align-items: normal;
+        gap: 40px;
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        @include mobile {
+            margin-top: 20px;
+            gap: 20px;
+        }
+    }
+
+    & .column {
+        width: 100%;
+        max-width: 50%;
+        gap: 40px;
+
+        @include tablet {
+            max-width: none;
+            gap: 20px;
+        }
+    }
+
+    & img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--border-radius-small);
+    }
+
+    &__tabs {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border: 2px solid var(--color-green);
+        border-radius: var(--border-radius-small);
+
+        @include phone {
+            flex-direction: column;
+        }
+
+        & li {
+            width: 50%;
+            position: relative;
+            @include fluid-text(20, 16);
+            font-weight: 500;
+            padding: 15px;
+            @include flex-center;
+            gap: 15px;
+            color: var(--color-green);
+            transition: all .3s ease;
+
+            @include phone {
+                width: 100%;
+            }
+
+            @include hover {
+                color: var(--color-black);
+                background: var(--color-white-alt);
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &.active {
+                color: var(--color-white);
+                background: var(--color-green);
+            }
+
+            & svg {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__block {
+        width: 100%;
+        max-width: 390px;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: -3;
+        transition: all .3s ease;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        @include mobile {
+            gap: 40px;
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            position: static;
+            z-index: 1;
+        }
+    }
+
+    & form {
+        gap: 20px;
+
+        & input,
+        & .button {
+            height: 50px;
+        }
+
+        & .actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            & a {
+                color: var(--color-gray-dark);
+                text-decoration-line: underline;
+                text-underline-position: from-font;
+
+                @include hover {
+                    color: var(--color-green);
+                }
+            }
+        }
+    }
 }

@@ -1,5 +1,21 @@
-    label {
+    form {
         display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    label {
+        font-weight: 500;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        & span {
+            font-size: 12px;
+            color: var(--color-red);
+        }
     }
 
     input,
@@ -7,16 +23,32 @@
         outline: none;
         width: 100%;
         height: var(--input-height);
-
+        padding: 0 15px;
         color: var(--color-black);
-        border: 1px solid var(--color-gray-alt);
+        border: var(--border);
+        border-radius: var(--border-radius-small);
+
+        &.error {
+            border-color: var(--color-red);
+            background: #E600001A;
+        }
+
+        &.verified {
+            border-color: var(--color-green);
+        }
 
         &::placeholder {
             color: var(--color-gray);
         }
 
-        &:focus-visible {}
+        &:focus-visible {
+            border-color: var(--color-black);
+        }
 
+    }
+
+    input[type="password"] {
+        letter-spacing: 4px;
     }
 
     textarea {

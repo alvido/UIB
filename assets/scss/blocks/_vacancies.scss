@@ -1,0 +1,43 @@
+.vacancies {
+
+    &.popular {
+        margin-bottom: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
+    }
+
+    &__list {
+
+        &--popular {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+            @include mobile {
+                margin-top: 20px;
+                grid-template-columns: 1fr;
+            }
+
+            & li {
+                align-items: center;
+                justify-content: space-between;
+
+                & .column {
+                    align-items: center;
+                }
+            }
+        }
+
+        & li {
+            display: flex;
+            flex-direction: column;
+            min-height: 200px;
+            padding: 30px 36px;
+            border: var(--border);
+            border-radius: var(--border-radius-small);
+
+            & .column {
+                gap: 10px;
+            }
+        }
+    }
+}
