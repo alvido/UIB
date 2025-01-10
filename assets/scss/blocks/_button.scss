@@ -1,0 +1,48 @@
+.button {
+    @include reset-button;
+    @include flex-center;
+    gap: 10px;
+    padding: 15px 20px;
+    font-weight: 500;
+    height: 50px;
+    color: var(--color-white);
+    background: var(--color-green);
+    border: 2px solid var(--color-green);
+    border-radius: var(--border-radius-small);
+
+    @include hover {
+        color: var(--color-green);
+        background: var(--color-white);
+    }
+
+    &--green {
+        color: var(--color-green);
+        background: var(--color-white);
+
+        @include hover {
+            color: var(--color-white);
+            background: var(--color-green);
+        }
+    }
+
+    &--black {
+        color: var(--color-black);
+        background: var(--color-white);
+        border-color: var(--color-black);
+
+        @include hover {
+            color: var(--color-white);
+            background: var(--color-black);
+        }
+    }
+}
+
+.icon {
+    @include reset-button;
+    @include flex-center;
+    color: var(--color-green);
+
+    @include hover {
+        color: var(--color-black);
+    }
+}

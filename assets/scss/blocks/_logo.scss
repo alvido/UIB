@@ -1,0 +1,14 @@
+.logo {
+    & img {
+        max-height: 90px;
+
+        @include mobile {
+            max-height: 60px;
+        }
+    }
+
+    &__text {
+        font-size: 13px;
+        max-width: 245px;
+    }
+}

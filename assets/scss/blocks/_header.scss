@@ -1,0 +1,52 @@
+.header {
+    position: relative;
+    padding: 15px 0;
+    border-bottom: var(--border);
+
+    &.fixed {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+
+    @include phone {
+        & .actions__button {
+            font-size: 0;
+            gap: 0;
+            height: 40px;
+            width: 50px;
+            padding: 0;
+        }
+    }
+
+}
+
+.registration {
+    position: relative;
+
+    &__method {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 10px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s ease;
+
+        @include phone {
+            width: max-content;
+        }
+
+        &.active {
+            height: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

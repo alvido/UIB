@@ -1,0 +1,49 @@
+.banner {
+    min-height: 550px;
+    @include flex-center;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        offset: 0;
+    }
+
+
+    .search-input {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 15px 30px;
+        background: var(--color-white);
+        border-radius: var(--border-radius-small);
+
+        & input {
+            font-size: 18px;
+
+            &::placeholder {
+                font-style: italic;
+            }
+        }
+
+
+    }
+
+    & a {
+        margin: 0 auto;
+        font-weight: 300;
+        color: var(--color-white);
+        text-decoration-line: underline;
+        text-underline-position: UNDER;
+
+        @include hover {
+            color: var(--color-gray);
+        }
+    }
+
+
+}
