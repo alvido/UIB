@@ -23,84 +23,107 @@
                         <img src="assets/images/logo.png" alt="logo">
                     </a>
                     <div class="row actions">
-                        <div class="registration">
-                            <button class="actions__button button" id="registrBtn">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M13.3333 17.5V15.8333C13.3333 14.9493 12.9821 14.1014 12.3569 13.4763C11.7318 12.8512 10.884 12.5 9.99992 12.5H4.16659C3.28253 12.5 2.43468 12.8512 1.80956 13.4763C1.18444 14.1014 0.833252 14.9493 0.833252 15.8333V17.5"
-                                        stroke="white" stroke-width="1.66667" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M7.08333 9.16667C8.92428 9.16667 10.4167 7.67428 10.4167 5.83333C10.4167 3.99238 8.92428 2.5 7.08333 2.5C5.24238 2.5 3.75 3.99238 3.75 5.83333C3.75 7.67428 5.24238 9.16667 7.08333 9.16667Z"
-                                        stroke="white" stroke-width="1.66667" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M16.6667 6.66669V11.6667" stroke="white" stroke-width="1.66667"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M19.1667 9.16669H14.1667" stroke="white" stroke-width="1.66667"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                Зарегистрироваться
-                            </button>
-                            <div class="registration__method">
-                                <button class="button button--green" onclick="openModal()">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.02275 4.20306C2.29811 4.20306 2.52134 4.42629 2.52134 4.70165V11.3494C2.52134 11.6248 2.29811 11.848 2.02275 11.848C1.7474 11.848 1.52417 11.6248 1.52417 11.3494V4.70165C1.52417 4.42629 1.7474 4.20306 2.02275 4.20306Z"
-                                            fill="#007F65" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.0001 14.5085C8.86514 14.5085 7.74811 14.7917 6.75021 15.3323C5.75232 15.8729 4.90506 16.6541 4.28519 17.6048C4.13481 17.8354 3.8259 17.9005 3.59523 17.7501C3.36457 17.5997 3.29949 17.2908 3.44989 17.0602C4.16035 15.9705 5.13144 15.0752 6.27523 14.4556C7.41898 13.8359 8.69928 13.5113 10.0001 13.5113C11.301 13.5113 12.5812 13.8359 13.725 14.4556C14.8688 15.0752 15.8399 15.9705 16.5504 17.0602C16.7007 17.2908 16.6357 17.5997 16.405 17.7501C16.1743 17.9005 15.8654 17.8354 15.715 17.6048C15.0952 16.6541 14.2479 15.8729 13.25 15.3323C12.2521 14.7917 11.1351 14.5085 10.0001 14.5085Z"
-                                            fill="#007F65" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.8424 1.56956C9.94478 1.53545 10.0554 1.53545 10.1578 1.56956L18.1351 4.22867C18.3387 4.29653 18.476 4.48707 18.476 4.70167C18.476 4.91627 18.3387 5.10681 18.1351 5.17467L10.1578 7.83377C10.0554 7.86787 9.94478 7.86787 9.8424 7.83377L1.86509 5.17467C1.66149 5.10681 1.52417 4.91627 1.52417 4.70167C1.52417 4.48707 1.66149 4.29653 1.86509 4.22867L9.8424 1.56956ZM3.59941 4.70167L10.0001 6.83521L16.4008 4.70167L10.0001 2.56811L3.59941 4.70167Z"
-                                            fill="#007F65" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M6.90497 5.8463C7.10806 6.03226 7.12195 6.34763 6.93595 6.55072C6.3915 7.1453 6.03178 7.88546 5.90064 8.68093C5.76951 9.47634 5.87264 10.2928 6.19745 11.0307C6.52226 11.7686 7.05474 12.396 7.72996 12.8365C8.40517 13.277 9.194 13.5113 10.0002 13.5113C10.8064 13.5113 11.5952 13.277 12.2704 12.8365C12.9456 12.396 13.4781 11.7686 13.8029 11.0307C14.1277 10.2928 14.2308 9.47634 14.0997 8.68093C13.9686 7.88546 13.6089 7.1453 13.0644 6.55072C12.8784 6.34763 12.8923 6.03226 13.0954 5.8463C13.2985 5.66034 13.6138 5.67422 13.7998 5.87729C14.4749 6.61454 14.921 7.53233 15.0836 8.51873C15.2462 9.50513 15.1183 10.5174 14.7155 11.4324C14.3128 12.3474 13.6525 13.1254 12.8152 13.6717C11.978 14.2179 10.9999 14.5084 10.0002 14.5084C9.00048 14.5084 8.0224 14.2179 7.18511 13.6717C6.34782 13.1254 5.68758 12.3474 5.28481 11.4324C4.88203 10.5174 4.75415 9.50513 4.91675 8.51873C5.07936 7.53233 5.52542 6.61454 6.20057 5.87729C6.38651 5.67422 6.70188 5.66034 6.90497 5.8463Z"
-                                            fill="#007F65" />
-                                    </svg>
-                                    Как студент
-                                </button>
-                                <button class="button button--green" onclick="openModal()">
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M1.17383 17.5V15.8333C1.17383 14.9493 1.52502 14.1014 2.15014 13.4763C2.77526 12.8512 3.62311 12.5 4.50716 12.5L8.27939 12.5"
-                                            stroke="#007F65" stroke-width="1.14286" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M7.84041 9.16667C9.68136 9.16667 11.1737 7.67428 11.1737 5.83333C11.1737 3.99238 9.68136 2.5 7.84041 2.5C5.99946 2.5 4.50708 3.99238 4.50708 5.83333C4.50708 7.67428 5.99946 9.16667 7.84041 9.16667Z"
-                                            stroke="#007F65" stroke-width="1.14286" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M12.4952 12.4681L9.98901 12.4682V14.4682V17.5L18.2557 17.5V14.4682V12.4681H15.9099M12.4952 12.4681V10.8578L15.9099 10.8578V12.4681M12.4952 12.4681H15.9099"
-                                            stroke="#007F65" stroke-width="1.14286" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                    Как работодатель
-                                </button>
-                            </div>
-                        </div>
                         <button class="actions__button button button--black">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                    d="M12.5 2.5H15.8333C16.2754 2.5 16.6993 2.67559 17.0118 2.98816C17.3244 3.30072 17.5 3.72464 17.5 4.16667V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H12.5"
+                                    d="M16.6666 17.5V15.8333C16.6666 14.9493 16.3154 14.1014 15.6903 13.4763C15.0652 12.8512 14.2173 12.5 13.3333 12.5H6.66659C5.78253 12.5 4.93468 12.8512 4.30956 13.4763C3.68444 14.1014 3.33325 14.9493 3.33325 15.8333V17.5"
                                     stroke="black" stroke-width="1.66667" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M8.33325 14.1667L12.4999 10L8.33325 5.83334" stroke="black"
-                                    stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M12.5 10H2.5" stroke="black" stroke-width="1.66667" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    d="M9.9999 9.16667C11.8408 9.16667 13.3332 7.67428 13.3332 5.83333C13.3332 3.99238 11.8408 2.5 9.9999 2.5C8.15895 2.5 6.66656 3.99238 6.66656 5.83333C6.66656 7.67428 8.15895 9.16667 9.9999 9.16667Z"
+                                    stroke="black" stroke-width="1.66667" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
                             </svg>
-                            Войти
+                            Мой профиль
+                        </button>
+                        <button class="actions__button button button--black">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5"
+                                    stroke="black" stroke-width="1.66667" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path d="M13.3333 14.1667L17.5 10L13.3333 5.83334" stroke="black" stroke-width="1.66667"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M17.5 10H7.5" stroke="black" stroke-width="1.66667" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                            Выход
                         </button>
                     </div>
                 </div>
             </div>
         </header>
         <main class="main" id="primary">
-      
+            <div class="container">
+                <article class="single">
+                    <div class="single__header">
+                        <div class="column">
+                            <h1>Маркетолог</h1>
+                            <span class="city">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
+                                        stroke="black" stroke-width="1.3" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                    </path>
+                                    <path
+                                        d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                                        stroke="black" stroke-width="1.3" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                    </path>
+                                </svg>
+                                Алматы
+                            </span>
+                        </div>
+                    </div>
+                    <div class="single__meta">
+                        <div class="row">
+                            <p class="text medium">Заработная плата:</p>
+                            <p class="text green">200 000 ₸</p>
+                        </div>
+
+                        <div class="row">
+                            <p class="text medium">График работы:</p>
+                            <p class="text green">9:00 - 18:00</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p class="medium">Описание компании:</p>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi
+                                eget at
+                                proin. Neque nec quis nunc aenean pellentesque condimentum interdum aliquam velit.
+                                Vestibulum dignissim tortor ultricies lacus. Magna blandit scelerisque malesuada enim
+                                velit
+                                venenatis sed. Feugiat lacinia turpis mauris eget et nisl sed in.
+                            </p>
+                                <p>
+                                Tellus vivamus et feugiat netus est facilisi eget at proin. Neque nec quis nunc aenean
+                                pellentesque condimentum interdum aliquam velit. Vestibulum dignissim tortor ultricies
+                                lacus. Magna blandit scelerisque malesuada enim velit venenatis sed. Feugiat lacinia
+                                turpis
+                                mauris eget et nisl sed in.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi
+                                eget at
+                                proin. Neque nec quis nunc aenean pellentesque condimentum interdum aliquam velit.
+                                Vestibulum dignissim tortor ultricies lacus. Magna blandit scelerisque malesuada enim
+                                velit
+                                venenatis sed. Feugiat lacinia turpis mauris eget et nisl sed in.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="button">Откликнуться</button>
+                        <a class="button button--green" href="single-company.html">Контакты</a>
+                    </div>
+                </article>
+            </div>
         </main>
         <footer class="footer">
             <div class="container">

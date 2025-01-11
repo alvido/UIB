@@ -7,6 +7,10 @@
     background-color: rgba(0, 0, 0, 0.5);
     overflow: auto;
 
+    &.active {
+        display: flex;
+    }
+
     .modal-content {
         margin: auto;
         position: relative;
@@ -15,6 +19,10 @@
         border-radius: var(--border-radius);
         width: 100%;
         max-width: 450px;
+
+        &.big {
+            max-width: 630px;
+        }
 
        @include phone {
         padding-inline: 20px;

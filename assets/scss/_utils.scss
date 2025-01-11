@@ -60,7 +60,7 @@
 }
 
 .text {
-    font-size: 20px;
+    @include fluid-text(20, 18);
 }
 
 .green {

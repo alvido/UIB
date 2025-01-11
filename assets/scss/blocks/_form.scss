@@ -59,6 +59,20 @@
         letter-spacing: 4px;
     }
 
+    .input-selary {
+        position: relative;
+        flex: 1;
+
+        &::after {
+            content: '₸';
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            translate: 0 -50%;
+            background: var(--color-white);
+        }
+    }
+
     textarea {
         padding: 13px 15px;
         min-height: 120px;
@@ -188,3 +202,24 @@
     }
 
     /* custom */
+
+    .agree {
+        font-size: 13px;
+        text-wrap: wrap;
+        font-weight: 400;
+        gap: 10px;
+        color: var(--color-gray-dark);
+
+        & .checkmark {
+            min-width: 14px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid var(--color-green);
+            border-radius: 2px;
+        }
+
+        & a {
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }

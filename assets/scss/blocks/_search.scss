@@ -93,34 +93,6 @@
             text-wrap: nowrap;
         }
 
-        & .selary-group {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-
-            & span {
-                width: 20px;
-                height: 1px;
-                background: var(--color-gray);
-                font-size: 0;
-            }
-        }
-
-        & .input-selary {
-            position: relative;
-            flex: 1;
-
-            &::after {
-                content: '₸';
-                position: absolute;
-                top: 50%;
-                right: 15px;
-                translate: 0 -50%;
-                background: var(--color-white);
-            }
-        }
-
         & input {
             max-width: 155px;
 
@@ -136,16 +108,30 @@
                 max-width: none;
             }
         }
+    }
 
-        & .button {
+    & .button {
 
-            @include phone {
-                width: 100%;
-            }
-            & svg {
-                width: 20px;
-                height: 20px;
-            }
+        @include phone {
+            width: 100%;
         }
+        & svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.selary-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    & span {
+        width: 20px;
+        height: 1px;
+        background: var(--color-gray);
+        font-size: 0;
     }
 }

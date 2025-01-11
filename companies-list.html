@@ -23,7 +23,7 @@
                         <img src="assets/images/logo.png" alt="logo">
                     </a>
                     <div class="row actions">
-                        <a class="actions__button button" href="resume.html">
+                        <a class="actions__button button" href="#createVacancy">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_364_328)">
@@ -42,7 +42,7 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            Создать резюме
+                            Создать вакансию
                         </a>
                         <button class="actions__button button button--black">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -79,46 +79,22 @@
         <main class="main" id="primary">
             <section class="search">
                 <div class="container">
-                    <h3>Что вы ищете?</h3>
+                    <h3>Поиск компаний</h3>
                     <form action="#">
-                        <div class="search__input">
-                            <button class="icon">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M18.3333 31.6667C25.6971 31.6667 31.6667 25.6971 31.6667 18.3333C31.6667 10.9695 25.6971 5 18.3333 5C10.9695 5 5 10.9695 5 18.3333C5 25.6971 10.9695 31.6667 18.3333 31.6667Z"
-                                        stroke="#007F65" stroke-width="3.33333" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M35 34.9998L27.75 27.7498" stroke="#007F65" stroke-width="3.33333"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <input type="text" id="searh" placeholder="Должность, профессия, компания...">
-                        </div>
-                        <div class="search__filter">
-                            <div class="row">
-                                <label class="medium">Найти по специальности</label>
-                                <div class="custom-select">
-                                    <select autocomplete="off">
-                                        <option value="">Выберите специальность</option>
-                                        <option value="1">специальность 1</option>
-                                        <option value="2">специальность 2</option>
-                                        <option value="3">специальность 3</option>
-                                        <option value="4">специальность 4</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label for="min-salary medium">Желаемая зарплата:</label>
-                                <div class="selary-group">
-                                    <div class="input-selary">
-                                        <input id="min-salary" type="number" placeholder="20 000" min="0">
-                                    </div>
-                                    <span>—</span>
-                                    <div class="input-selary">
-                                        <input id="max-salary" type="number" placeholder="800 000" min="0">
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="search__input">
+                                <button class="icon">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18.3333 31.6667C25.6971 31.6667 31.6667 25.6971 31.6667 18.3333C31.6667 10.9695 25.6971 5 18.3333 5C10.9695 5 5 10.9695 5 18.3333C5 25.6971 10.9695 31.6667 18.3333 31.6667Z"
+                                            stroke="#007F65" stroke-width="3.33333" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M35 34.9998L27.75 27.7498" stroke="#007F65" stroke-width="3.33333"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <input type="text" id="searh" placeholder="Должность, профессия, компания...">
                             </div>
                             <button class="button">
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
@@ -139,26 +115,42 @@
             <section class="vacancies">
                 <div class="container">
                     <div class="row">
-                        <h1>Вакансии</h1>
+                        <h1>Cписок компаний</h1>
                         <div class="filter">
                             <label class="medium">Сортировка</label>
                             <div class="custom-select">
                                 <select autocomplete="off">
-                                    <option value="">Выберите сортировку</option>
                                     <option value="1">По дате публикации</option>
                                     <option value="2">По зарплате</option>
+                                    <option value="3">По рейтингу</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <ul class="vacancies__list">
+                    <ul class="company__list">
                         <li>
-                            <div class="column">
-                                <h4>Менеджер по маркетингу</h4>
-                                <span class="text green">480 000 ₸</span>
+                            <div class="company__logo">
+                                <img src="assets/images/company/c4d41f41739f9df83b7484dfeb483bd9.png"
+                                    alt="Логотип компании">
                             </div>
                             <div class="column">
-                                <p class="medium">ТОО Silkway Auto Kazakhstan</p>
+                                <h4>АО «Информационные системы Казахстан»</h4>
+                                <a class="website" href="www.isk.kz" target="_blank">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6024 18.3337 10C18.3337 5.39762 14.6027 1.66666 10.0003 1.66666C5.39795 1.66666 1.66699 5.39762 1.66699 10C1.66699 14.6024 5.39795 18.3333 10.0003 18.3333Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M1.66699 10H18.3337" stroke="#007F65" stroke-width="1.1"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M10.0003 1.66666C12.0847 3.94862 13.2693 6.91003 13.3337 10C13.2693 13.09 12.0847 16.0514 10.0003 18.3333C7.91593 16.0514 6.73136 13.09 6.66699 10C6.73136 6.91003 7.91593 3.94862 10.0003 1.66666Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    www.isk.kz
+                                </a>
                                 <p class="city">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -173,24 +165,38 @@
                                     </svg>
                                     Алматы
                                 </p>
+                                <p class="excerpt">
+                                    Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi
+                                    eget at proin. Neque nec quis nunc aenean pellentesque condimentum interdum aliquam
+                                    velit. Vestibulum dignissim tortor ultricies lacus. Magna blandit scelerisque
+                                    malesuada
+                                    enim velit venenatis sed. Feugiat lacinia turpis mauris eget et nisl sed in.
+                                </p>
                             </div>
-                            <div class="row">
-                                <a class="button" href="single-vacancy.html">
-                                    Откликнуться
-                                </a>
-                                <a class="button button--green" href="single-company.html">
-                                    Контакты
-                                </a>
-                            </div>
-                            <p class="date">Дата публикации: <b>8.10.2024</b></p>
                         </li>
                         <li>
-                            <div class="column">
-                                <h4>Интернет-маркетолог</h4>
-                                <span class="text green">560 000 ₸</span>
+                            <div class="company__logo">
+                                <img src="assets/images/company/c4d41f41739f9df83b7484dfeb483bd9.png"
+                                    alt="Логотип компании">
                             </div>
                             <div class="column">
-                                <p class="medium">ТОО Silkway Auto Kazakhstan</p>
+                                <h4>АО «Информационные системы Казахстан»</h4>
+                                <a class="website" href="www.isk.kz" target="_blank">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6024 18.3337 10C18.3337 5.39762 14.6027 1.66666 10.0003 1.66666C5.39795 1.66666 1.66699 5.39762 1.66699 10C1.66699 14.6024 5.39795 18.3333 10.0003 18.3333Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M1.66699 10H18.3337" stroke="#007F65" stroke-width="1.1"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M10.0003 1.66666C12.0847 3.94862 13.2693 6.91003 13.3337 10C13.2693 13.09 12.0847 16.0514 10.0003 18.3333C7.91593 16.0514 6.73136 13.09 6.66699 10C6.73136 6.91003 7.91593 3.94862 10.0003 1.66666Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    www.isk.kz
+                                </a>
                                 <p class="city">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -205,24 +211,38 @@
                                     </svg>
                                     Алматы
                                 </p>
+                                <p class="excerpt">
+                                    Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi
+                                    eget at proin. Neque nec quis nunc aenean pellentesque condimentum interdum aliquam
+                                    velit. Vestibulum dignissim tortor ultricies lacus. Magna blandit scelerisque
+                                    malesuada
+                                    enim velit venenatis sed. Feugiat lacinia turpis mauris eget et nisl sed in.
+                                </p>
                             </div>
-                            <div class="row">
-                                <a class="button" href="single-vacancy.html">
-                                    Откликнуться
-                                </a>
-                                <a class="button button--green" href="single-company.html">
-                                    Контакты
-                                </a>
-                            </div>
-                            <p class="date">Дата публикации: <b>8.10.2024</b></p>
                         </li>
                         <li>
-                            <div class="column">
-                                <h4>Менеджер по маркетингу</h4>
-                                <span class="text green">480 000 ₸</span>
+                            <div class="company__logo">
+                                <img src="assets/images/company/c4d41f41739f9df83b7484dfeb483bd9.png"
+                                    alt="Логотип компании">
                             </div>
                             <div class="column">
-                                <p class="medium">ТОО Silkway Auto Kazakhstan</p>
+                                <h4>АО «Информационные системы Казахстан»</h4>
+                                <a class="website" href="www.isk.kz" target="_blank">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6024 18.3337 10C18.3337 5.39762 14.6027 1.66666 10.0003 1.66666C5.39795 1.66666 1.66699 5.39762 1.66699 10C1.66699 14.6024 5.39795 18.3333 10.0003 18.3333Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M1.66699 10H18.3337" stroke="#007F65" stroke-width="1.1"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M10.0003 1.66666C12.0847 3.94862 13.2693 6.91003 13.3337 10C13.2693 13.09 12.0847 16.0514 10.0003 18.3333C7.91593 16.0514 6.73136 13.09 6.66699 10C6.73136 6.91003 7.91593 3.94862 10.0003 1.66666Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    www.isk.kz
+                                </a>
                                 <p class="city">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -237,24 +257,38 @@
                                     </svg>
                                     Алматы
                                 </p>
+                                <p class="excerpt">
+                                    Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi
+                                    eget at proin. Neque nec quis nunc aenean pellentesque condimentum interdum aliquam
+                                    velit. Vestibulum dignissim tortor ultricies lacus. Magna blandit scelerisque
+                                    malesuada
+                                    enim velit venenatis sed. Feugiat lacinia turpis mauris eget et nisl sed in.
+                                </p>
                             </div>
-                            <div class="row">
-                                <a class="button" href="single-vacancy.html">
-                                    Откликнуться
-                                </a>
-                                <a class="button button--green" href="single-company.html">
-                                    Контакты
-                                </a>
-                            </div>
-                            <p class="date">Дата публикации: <b>8.10.2024</b></p>
                         </li>
                         <li>
-                            <div class="column">
-                                <h4>Интернет-маркетолог</h4>
-                                <span class="text green">560 000 ₸</span>
+                            <div class="company__logo">
+                                <img src="assets/images/company/c4d41f41739f9df83b7484dfeb483bd9.png"
+                                    alt="Логотип компании">
                             </div>
                             <div class="column">
-                                <p class="medium">ТОО Silkway Auto Kazakhstan</p>
+                                <h4>АО «Информационные системы Казахстан»</h4>
+                                <a class="website" href="www.isk.kz" target="_blank">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6024 18.3337 10C18.3337 5.39762 14.6027 1.66666 10.0003 1.66666C5.39795 1.66666 1.66699 5.39762 1.66699 10C1.66699 14.6024 5.39795 18.3333 10.0003 18.3333Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M1.66699 10H18.3337" stroke="#007F65" stroke-width="1.1"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M10.0003 1.66666C12.0847 3.94862 13.2693 6.91003 13.3337 10C13.2693 13.09 12.0847 16.0514 10.0003 18.3333C7.91593 16.0514 6.73136 13.09 6.66699 10C6.73136 6.91003 7.91593 3.94862 10.0003 1.66666Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    www.isk.kz
+                                </a>
                                 <p class="city">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -269,24 +303,38 @@
                                     </svg>
                                     Алматы
                                 </p>
+                                <p class="excerpt">
+                                    Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi
+                                    eget at proin. Neque nec quis nunc aenean pellentesque condimentum interdum aliquam
+                                    velit. Vestibulum dignissim tortor ultricies lacus. Magna blandit scelerisque
+                                    malesuada
+                                    enim velit venenatis sed. Feugiat lacinia turpis mauris eget et nisl sed in.
+                                </p>
                             </div>
-                            <div class="row">
-                                <a class="button" href="single-vacancy.html">
-                                    Откликнуться
-                                </a>
-                                <a class="button button--green" href="single-company.html">
-                                    Контакты
-                                </a>
-                            </div>
-                            <p class="date">Дата публикации: <b>8.10.2024</b></p>
                         </li>
                         <li>
-                            <div class="column">
-                                <h4>Менеджер по маркетингу</h4>
-                                <span class="text green">480 000 ₸</span>
+                            <div class="company__logo">
+                                <img src="assets/images/company/c4d41f41739f9df83b7484dfeb483bd9.png"
+                                    alt="Логотип компании">
                             </div>
                             <div class="column">
-                                <p class="medium">ТОО Silkway Auto Kazakhstan</p>
+                                <h4>АО «Информационные системы Казахстан»</h4>
+                                <a class="website" href="www.isk.kz" target="_blank">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6024 18.3337 10C18.3337 5.39762 14.6027 1.66666 10.0003 1.66666C5.39795 1.66666 1.66699 5.39762 1.66699 10C1.66699 14.6024 5.39795 18.3333 10.0003 18.3333Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M1.66699 10H18.3337" stroke="#007F65" stroke-width="1.1"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M10.0003 1.66666C12.0847 3.94862 13.2693 6.91003 13.3337 10C13.2693 13.09 12.0847 16.0514 10.0003 18.3333C7.91593 16.0514 6.73136 13.09 6.66699 10C6.73136 6.91003 7.91593 3.94862 10.0003 1.66666Z"
+                                            stroke="#007F65" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    www.isk.kz
+                                </a>
                                 <p class="city">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -301,50 +349,44 @@
                                     </svg>
                                     Алматы
                                 </p>
-                            </div>
-                            <div class="row">
-                                <a class="button" href="single-vacancy.html">
-                                    Откликнуться
-                                </a>
-                                <a class="button button--green" href="single-company.html">
-                                    Контакты
-                                </a>
-                            </div>
-                            <p class="date">Дата публикации: <b>8.10.2024</b></p>
-                        </li>
-                        <li>
-                            <div class="column">
-                                <h4>Интернет-маркетолог</h4>
-                                <span class="text green">560 000 ₸</span>
-                            </div>
-                            <div class="column">
-                                <p class="medium">ТОО Silkway Auto Kazakhstan</p>
-                                <p class="city">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
-                                            stroke="black" stroke-width="1.3" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path
-                                            d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                                            stroke="black" stroke-width="1.3" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </svg>
-                                    Алматы
+                                <p class="excerpt">
+                                    Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi
+                                    eget at proin. Neque nec quis nunc aenean pellentesque condimentum interdum aliquam
+                                    velit. Vestibulum dignissim tortor ultricies lacus. Magna blandit scelerisque
+                                    malesuada
+                                    enim velit venenatis sed. Feugiat lacinia turpis mauris eget et nisl sed in.
                                 </p>
                             </div>
-                            <div class="row">
-                                <a class="button" href="single-vacancy.html">
-                                    Откликнуться
-                                </a>
-                                <a class="button button--green" href="single-company.html">
-                                    Контакты
-                                </a>
-                            </div>
-                            <p class="date">Дата публикации: <b>8.10.2024</b></p>
                         </li>
                     </ul>
+
+                    <nav class="pagination">
+                        <ul class="pagination__list">
+                            <li>
+                                <a class="prev page-numbers disabled" href="#">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 11L6 6L1 1" stroke="black" stroke-width="1.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li><span aria-current="page" class="page-numbers current">1</span></li>
+                            <li><a class="page-numbers" href="#">2</a></li>
+                            <li><a class="page-numbers" href="#">3</a></li>
+                            <li><a class="page-numbers" href="#">4</a></li>
+                            <li><span class="page-numbers dots">…</span></li>
+                            <li><a class="page-numbers" href="#/">106</a></li>
+                            <li>
+                                <a class="next page-numbers" href="#"><svg width="7" height="12" viewBox="0 0 7 12"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 11L6 6L1 1" stroke="black" stroke-width="1.66667"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </section>
 
@@ -480,61 +522,60 @@
         </footer>
 
         <!-- Модальное окно -->
-        <div id="registrModal" class="modal">
-            <div class="modal-content">
+        <div id="createVacancy" class="modal">
+            <div class="modal-content big">
                 <button class="icon close" id="closeModal">Close</button>
                 <form id="registrationForm">
                     <div class="form-group">
-                        <label for="email">Логин (e-mail)</label>
-                        <input type="email" id="email" autocomplete="email" />
-                        <span class="error" id="emailError" data-error="email"></span>
+                        <label for="company">Название компании</label>
+                        <input type="text" id="company">
                     </div>
                     <div class="form-group">
-                        <label for="phone">Номер телефона</label>
-                        <input type="tel" id="phone" autocomplete="tel" />
-                        <span class="error" id="phoneError" data-error="tel"></span>
+                        <label for="vacancy">Описание вакансии</label>
+                        <textarea
+                            id="vacancy">Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi eget at proin. Neque nec quis n|</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="password">Пароль</label>
-                        <input type="password" name="new-password" id="password" autocomplete="new-password"
-                            data-validate="password" />
-                        <span class="error" id="passwordError" data-error="password"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Подтверждение пароля</label>
-                        <input class="error" type="password" name="confirm-password" id="confirmPassword"
-                            autocomplete="new-password" data-validate="confirm-password" />
-                        <span class="error" id="confirmPasswordError" data-error="confirm-password">Пожалуйста,
-                            заполните поле</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="fio">ФИО</label>
-                        <input type="text" id="fio" autocomplete="name" />
-                        <span class="error" id="fioError" data-error="text"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="course">Курс</label>
-                        <div class="custom-select">
-                            <select id="course" autocomplete="off">
-                                <option value="">Выберите курс</option>
-                                <option value="1">Курс 1</option>
-                                <option value="2">Курс 2</option>
-                            </select>
+                        <label for="email">Размер заработной платы</label>
+                        <div class="input-selary">
+                            <input id="min-salary" type="number" placeholder="20 000" min="0">
                         </div>
-                        <span class="error" id="courseError" data-error="select"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">График работы</label>
+                        <div class="selary-group">
+                            С
+                            <div class="custom-select">
+                                <select autocomplete="off">
+                                    <option value="1">8:00</option>
+                                    <option value="2">9:00</option>
+                                    <option value="3">10:00</option>
+                                    <option value="4">11:00</option>
+                                </select>
+                            </div>
+                            До
+                            <div class="custom-select">
+                                <select autocomplete="off">
+                                    <option value="1">15:00</option>
+                                    <option value="2">16:00</option>
+                                    <option value="3">17:00</option>
+                                    <option value="4">18:00</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="op">ОП</label>
-                        <div class="custom-select">
-                            <select id="op" autocomplete="off">
-                                <option value="">Выберите ОП</option>
-                                <option value="1">ОП 1</option>
-                                <option value="2">ОП 2</option>
-                            </select>
-                        </div>
-                        <span class="error" id="opError" data-error="select"></span>
+                        <label for="vacancy">Дополнительные условия</label>
+                        <textarea id="vacancy"></textarea>
                     </div>
-                    <button class="button" type="submit">Зарегистрироваться</button>
+                    <label for="agree" class="custom-input agree">
+                        <input type="checkbox" id="agree">
+                        <span class="checkmark"></span>
+                        <p>С <a href="#">условиями</a> публикации вакансии, а также с <a href="#">политикой
+                                конфиденциальности</a> согласен</p>
+                    </label>
+                    <button class="button" type="submit">Опубликовать вакансию</button>
                 </form>
             </div>
         </div>

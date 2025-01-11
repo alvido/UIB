@@ -23,7 +23,7 @@
                         <img src="assets/images/logo.png" alt="logo">
                     </a>
                     <div class="row actions">
-                        <a class="actions__button button" href="#">
+                        <a class="actions__button button" href="#createVacancy">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_364_328)">
@@ -358,61 +358,59 @@
         </footer>
 
         <!-- Модальное окно -->
-        <div id="registrModal" class="modal">
-            <div class="modal-content">
+        <div id="createVacancy" class="modal">
+            <div class="modal-content big">
                 <button class="icon close" id="closeModal">Close</button>
                 <form id="registrationForm">
                     <div class="form-group">
-                        <label for="email">Логин (e-mail)</label>
-                        <input type="email" id="email" autocomplete="email" />
-                        <span class="error" id="emailError" data-error="email"></span>
+                        <label for="company">Название компании</label>
+                        <input type="text" id="company">
                     </div>
                     <div class="form-group">
-                        <label for="phone">Номер телефона</label>
-                        <input type="tel" id="phone" autocomplete="tel" />
-                        <span class="error" id="phoneError" data-error="tel"></span>
+                        <label for="vacancy">Описание вакансии</label>
+                        <textarea
+                            id="vacancy">Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi eget at proin. Neque nec quis n|</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="password">Пароль</label>
-                        <input type="password" name="new-password" id="password" autocomplete="new-password"
-                            data-validate="password" />
-                        <span class="error" id="passwordError" data-error="password"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Подтверждение пароля</label>
-                        <input class="error" type="password" name="confirm-password" id="confirmPassword"
-                            autocomplete="new-password" data-validate="confirm-password" />
-                        <span class="error" id="confirmPasswordError" data-error="confirm-password">Пожалуйста,
-                            заполните поле</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="fio">ФИО</label>
-                        <input type="text" id="fio" autocomplete="name" />
-                        <span class="error" id="fioError" data-error="text"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="course">Курс</label>
-                        <div class="custom-select">
-                            <select id="course" autocomplete="off">
-                                <option value="">Выберите курс</option>
-                                <option value="1">Курс 1</option>
-                                <option value="2">Курс 2</option>
-                            </select>
+                        <label for="email">Размер заработной платы</label>
+                        <div class="input-selary">
+                            <input id="min-salary" type="number" placeholder="20 000" min="0">
                         </div>
-                        <span class="error" id="courseError" data-error="select"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">График работы</label>
+                        <div class="selary-group">
+                            С
+                            <div class="custom-select">
+                                <select autocomplete="off">
+                                    <option value="1">8:00</option>
+                                    <option value="2">9:00</option>
+                                    <option value="3">10:00</option>
+                                    <option value="4">11:00</option>
+                                </select>
+                            </div>
+                            До
+                            <div class="custom-select">
+                                <select autocomplete="off">
+                                    <option value="1">15:00</option>
+                                    <option value="2">16:00</option>
+                                    <option value="3">17:00</option>
+                                    <option value="4">18:00</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="op">ОП</label>
-                        <div class="custom-select">
-                            <select id="op" autocomplete="off">
-                                <option value="">Выберите ОП</option>
-                                <option value="1">ОП 1</option>
-                                <option value="2">ОП 2</option>
-                            </select>
-                        </div>
-                        <span class="error" id="opError" data-error="select"></span>
+                        <label for="vacancy">Дополнительные условия</label>
+                        <textarea id="vacancy"></textarea>
                     </div>
-                    <button class="button" type="submit">Зарегистрироваться</button>
+                    <label for="agree" class="custom-input agree">
+                        <input type="checkbox" id="agree">
+                        <span class="checkmark"></span>
+                        <p>С <a href="#">условиями</a> публикации вакансии, а также с <a href="#">политикой конфиденциальности</a> согласен</p>
+                    </label>
+                    <button class="button" type="submit">Опубликовать вакансию</button>
                 </form>
             </div>
         </div>

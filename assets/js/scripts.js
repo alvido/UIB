@@ -87,32 +87,8 @@ const init = async () => {
   //news tabs
 
   //modal
-  function openModal() {
-    const registrModal = document.getElementById('registrModal');
-    const body = document.querySelector('body');
 
-    if (registrModal) {
-      registrModal.style.display = 'flex';
-      body.classList.add('lock');
-    }
-
-    function closeModal() {
-      registrModal.style.display = 'none';
-      body.classList.remove('lock');
-    }
-
-    const closeModalButton = document.getElementById('closeModal');
-    if (closeModalButton) {
-      closeModalButton.addEventListener('click', closeModal);
-    }
-
-    window.addEventListener('click', function (event) {
-      if (event.target === registrModal) {
-        closeModal();
-      }
-    });
-  }
-  window.openModal = openModal;
+  
   //modal share
 
   // validation
@@ -269,19 +245,7 @@ const init = async () => {
       }
     }
   }
-
-  //
-
-
-
-
-
-
-
-
-
-
-
+  // validation
 
   // select
   var x, i, j, l, ll, selElmnt, a, b, c;
@@ -299,7 +263,7 @@ const init = async () => {
     /*for each element, create a new DIV that will contain the option list:*/
     b = document.createElement("UL");
     b.setAttribute("class", "select-items select-hide");
-    for (j = 1; j < ll; j++) {
+    for (j = 0; j < ll; j++) {
       /*for each option in the original select element,
       create a new DIV that will act as an option item:*/
       c = document.createElement("LI");
@@ -366,3 +330,55 @@ const init = async () => {
 };
 
 window.onload = init;
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modals = document.querySelectorAll(".modal");
+  const closeButtons = document.querySelectorAll(".modal .close");
+  const modalLinks = document.querySelectorAll('a[href^="#"]');
+  const body = document.body;
+
+  // Функция для открытия модального окна
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add("active");
+      body.classList.add("lock"); // Блокируем прокрутку
+    }
+  }
+
+  // Функция для закрытия модального окна
+  function closeModal(modal) {
+    if (modal) {
+      modal.classList.remove("active");
+      body.classList.remove("lock"); // Снимаем блокировку прокрутки
+    }
+  }
+
+  // Закрытие модальных окон при клике на крестик
+  closeButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const modal = this.closest(".modal");
+      closeModal(modal);
+    });
+  });
+
+  // Закрытие модального окна при клике вне его содержимого
+  window.addEventListener("click", function (e) {
+    modals.forEach(modal => {
+      if (e.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  // Обработчик кликов по ссылкам
+  modalLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // Предотвратить стандартное поведение (прокрутку к якорю)
+      const modalId = this.getAttribute("href").substring(1); // Получаем ID из ссылки
+      openModal(modalId);
+    });
+  });
+});
+

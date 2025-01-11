@@ -1,0 +1,103 @@
+.single {
+    margin: 60px 0;
+    padding: 30px 36px;
+    border: var(--border);
+    border-radius: var(--border-radius-small);
+
+    @include mobile {
+        padding: 20px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        @include phone {
+            flex-direction: column;
+        }
+    }
+
+    & .company__logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    & .column {
+        flex: 1;
+        gap: 10px;
+    }
+
+    & h1 {
+        @include fluid-text(30, 22);
+        font-weight: 500;
+
+        @include phone {
+        text-align: center;
+        }
+    }
+
+    & .city {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--color-gray-dark);
+
+        @include phone {
+            justify-content: center;
+        }
+
+        & svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__meta {
+        margin: 20px 0;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px 30px;
+        border-top: 1px solid var(--color-gray-light);
+        border-bottom: 1px solid var(--color-gray-light);
+    }
+
+    & .website {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--color-green);
+
+        @include hover {
+            color: var(--color-black);
+        }
+
+        & svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    & .content {
+        & p {
+            font-weight: 300;
+        }
+    }
+
+    & .buttons {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @include phone {
+            flex-direction: column;
+
+            & .button {
+                width: 100%;
+            }
+        }
+    }
+}
