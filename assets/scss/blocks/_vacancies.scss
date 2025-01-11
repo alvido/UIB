@@ -1,10 +1,74 @@
 .vacancies {
+    margin-bottom: 60px;
+
+    @include mobile {
+        margin-bottom: 30px;
+    }
 
     &.popular {
         margin-bottom: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
     }
 
     &__list {
+
+        & li {
+            position: relative;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+            min-height: 200px;
+            padding: 30px 36px;
+            border: var(--border);
+            border-radius: var(--border-radius-small);
+
+            @include mobile {
+                padding: 20px;
+                min-height: 150px;
+            }
+
+            & .column,
+            & .row {
+                gap: 10px;
+                width: 100%;
+                max-width: 70%;
+                justify-content: flex-start;
+
+                @include mobile {
+                    max-width: none;
+                }
+            }
+
+            & .date {
+                position: absolute;
+                top: 30px;
+                right: 36px;
+
+                @include mobile {
+                    position: static;
+                }
+            }
+
+            & p {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: var(--color-gray-dark);
+
+                & svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            & .button {
+                @include phone {
+                    width: 100%;
+                }
+            }
+
+        }
 
         &--popular {
             margin-top: 40px;
@@ -18,61 +82,35 @@
             }
 
             & li {
+                margin: 0;
                 align-items: center;
                 justify-content: space-between;
 
-                & .column {
+                & .column,
+                & .row {
+                    max-width: none;
                     align-items: center;
                 }
-            }
-        }
 
-        & li {
-            display: flex;
-            flex-direction: column;
-            min-height: 200px;
-            padding: 30px 36px;
-            border: var(--border);
-            border-radius: var(--border-radius-small);
-
-            & .column {
-                gap: 10px;
+                & p {
+                    color: var(--color-black);
+                }
             }
         }
     }
 }
 
-.company {
-    margin-bottom: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 
-    &__list {
-        margin-top: 40px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+    @include phone {
+        width: 100%;
+        flex-wrap: wrap;
+    }
 
-        @include tablet {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @include mobile {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include phone {
-            grid-template-columns: 1fr;
-        }
-
-        & li {
-            @include flex-center;
-            min-height: 200px;
-            padding: 30px 36px;
-            border: var(--border);
-            border-radius: var(--border-radius-small);
-
-            & img {
-                filter: grayscale(1);
-            }
-        }
+    & .select-selected {
+        min-width: 270px;
     }
 }

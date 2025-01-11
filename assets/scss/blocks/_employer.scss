@@ -1,0 +1,124 @@
+.company {
+    padding: 60px 0;
+
+    @include mobile {
+        padding: 30px 0;
+    }
+
+    &.recommended {
+        padding: 0;
+        margin-bottom: clamp(1.5rem, -0.359rem + 8.26vw, 6.25rem);
+    }
+
+    &__list {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include phone {
+            margin-top: 20px;
+            grid-template-columns: 1fr;
+        }
+
+        & li {
+            @include flex-center;
+            min-height: 200px;
+            padding: 30px 36px;
+            border: var(--border);
+            border-radius: var(--border-radius-small);
+
+            & img {
+                filter: grayscale(1);
+            }
+        }
+    }
+
+    &-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+        border: var(--border);
+        border-radius: var(--border-radius-small);
+
+        @include mobile {
+            gap: 20px;
+            padding: 20px;
+        }
+
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+    }
+
+    &__logo {
+        @include flex-center;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border-radius: 50%;
+        border: 1px solid var(--color-green);
+
+        @include mobile {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    &__name {
+        max-width: 70%;
+
+        @include tablet {
+            max-width: 59%;
+        }
+
+        @include mobile {
+            max-width: none;
+            text-align: center;
+        }
+    }
+
+    & .button--edit {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        @include mobile {
+            top: 20px;
+            right: 20px;
+        }
+    }
+
+    & .contact-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px 30px;
+
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include phone {
+            grid-template-columns: 1fr;
+        }
+    }
+}

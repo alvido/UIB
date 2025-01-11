@@ -1,5 +1,32 @@
 const init = async () => {
 
+  //
+  function toggleEditMode() {
+    const inputs = document.querySelectorAll('input, textarea');
+    const isEditable = inputs[0].disabled;
+
+    // Переключаем состояние полей
+    inputs.forEach((input) => {
+      input.disabled = !isEditable;
+    });
+
+    // Обновляем текст кнопки
+    const editButton = document.querySelector('.button--edit');
+    editButton.innerHTML = isEditable
+      ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><path d="M48 96l0 320c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-245.5c0-4.2-1.7-8.3-4.7-11.3l33.9-33.9c12 12 18.7 28.3 18.7 45.3L448 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l245.5 0c17 0 33.3 6.7 45.3 18.7l74.5 74.5-33.9 33.9L320.8 84.7c-.3-.3-.5-.5-.8-.8L320 184c0 13.3-10.7 24-24 24l-192 0c-13.3 0-24-10.7-24-24L80 80 64 80c-8.8 0-16 7.2-16 16zm80-16l0 80 144 0 0-80L128 80zm32 240a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z" fill="#7F7F7F"/></svg> Сохранить'
+      : `<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M10.7618 1.08709C10.9327 0.916163 11.1356 0.780578 11.359 0.688073C11.5823 0.595569 11.8217 0.547958 12.0634 0.547958C12.3051 0.547958 12.5445 0.595569 12.7678 0.688073C12.9911 0.780578 13.194 0.916163 13.365 1.08709C13.5359 1.25801 13.6715 1.46093 13.764 1.68426C13.8565 1.90758 13.9041 2.14694 13.9041 2.38866C13.9041 2.63039 13.8565 2.86974 13.764 3.09307C13.6715 3.31639 13.5359 3.51931 13.365 3.69024L4.57933 12.4759L1 13.452L1.97618 9.87271L10.7618 1.08709Z" stroke="#7F7F7F" stroke-width="0.976181" stroke-linecap="round" stroke-linejoin="round"/>
+     </svg> Редактировать`;
+
+    if (!isEditable) {
+      alert('Данные сохранены!'); // Для примера
+    }
+  }
+
+  window.toggleEditMode = toggleEditMode;
+
+  //
+
   // Burger Menu Open //
   let registrBtn = document.getElementById("registrBtn");
   let registrMethod = document.querySelector(".registration__method");

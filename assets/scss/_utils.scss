@@ -55,7 +55,7 @@
 }
 
 .page__title {
-    @include fluid-text(55, 26);
+    @include fluid-text(55, 22);
     font-weight: 700;
 }
 
@@ -69,4 +69,10 @@
 
 .medium {
     font-weight: 500;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }

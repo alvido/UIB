@@ -1,6 +1,7 @@
 /* select */
 .custom-select {
     position: relative;
+    width: 100%;
 
     & select {
         display: none;
@@ -12,7 +13,7 @@
         width: 100%;
         min-width: 150px;
         height: var(--input-height);
-        padding-inline: 15px;
+        padding-inline: 15px 40px;
         border: var(--border);
         border-radius: var(--border-radius-small);
         cursor: pointer;
@@ -32,6 +33,7 @@
         }
 
         &.select-arrow-active {
+            border-color: var(--color-green);
             border-bottom-color: transparent;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
@@ -52,6 +54,7 @@
         overflow: auto;
         background-color: #fff;
         border: var(--border);
+        border-color: var(--color-green);
         border-top: none;
         border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
 

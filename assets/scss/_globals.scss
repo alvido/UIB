@@ -42,22 +42,23 @@ h6 {
 }
 
 h1 {
-    @include fluid-text(42, 30);
-    font-weight: 400
+    @include fluid-text(40, 30);
+    font-weight: 700;
 }
 
 h2 {
-    @include fluid-text(40, 24);
+    @include fluid-text(40, 20);
     font-weight: 700;
 }
 
 h3 {
-    @include fluid-text(25, 20);
+    @include fluid-text(30, 20);
     font-weight: 500
 }
 
 h4 {
-    @include fluid-text(16, 20);
+    @include fluid-text(25, 20);
+    font-weight: 500
 }
 
 h5 {

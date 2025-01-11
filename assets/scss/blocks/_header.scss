@@ -16,7 +16,7 @@
         }
     }
 
-    @include phone {
+    @include mobile {
         & .actions__button {
             font-size: 0;
             gap: 0;
@@ -35,6 +35,7 @@
         position: absolute;
         right: 0;
         top: calc(100% + 10px);
+        z-index: 2;
         display: flex;
         flex-direction: column;
         gap: 10px;

@@ -1,0 +1,151 @@
+.search {
+    padding: 60px 0;
+
+    @include mobile {
+        padding: 30px 0;
+    }
+
+    & .row {
+        flex-wrap: nowrap;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 48%;
+        }
+
+        @include phone {
+            width: 100%;
+        }
+    }
+
+    & form {
+        margin-top: 20px;
+        gap: 30px;
+
+        @include phone {
+            gap: 15px;
+        }
+    }
+
+    &__input {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+
+        & input {
+            padding-inline: 70px;
+            height: 50px;
+            @include fluid-text(18, 14);
+
+            @include phone {
+                height: var(--input-height);
+                padding: 0 40px;
+            }
+
+            &::placeholder {
+                font-style: italic;
+                padding: 0 2px;
+            }
+        }
+
+        & .icon {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            translate: 0 -50%;
+
+            @include phone {
+                left: 10px;
+            }
+        }
+
+        & svg {
+            width: 30px;
+            height: 30px;
+
+            @include phone {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+
+    }
+
+    &__filter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        @include phone {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        & label {
+            text-wrap: nowrap;
+        }
+
+        & .selary-group {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            & span {
+                width: 20px;
+                height: 1px;
+                background: var(--color-gray);
+                font-size: 0;
+            }
+        }
+
+        & .input-selary {
+            position: relative;
+            flex: 1;
+
+            &::after {
+                content: '₸';
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                translate: 0 -50%;
+                background: var(--color-white);
+            }
+        }
+
+        & input {
+            max-width: 155px;
+
+            @include tablet {
+                max-width: none ;
+            }
+        }
+
+        & .custom-select {
+            max-width: 320px;
+
+            @include tablet {
+                max-width: none;
+            }
+        }
+
+        & .button {
+
+            @include phone {
+                width: 100%;
+            }
+            & svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
