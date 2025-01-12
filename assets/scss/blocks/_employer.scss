@@ -20,7 +20,7 @@
     }
 
     &__list {
-        
+
         & li {
             position: relative;
             margin-top: 25px;
@@ -51,30 +51,6 @@
             & .excerpt {
                 color: var(--color-black);
             }
-
-            & .website {
-                display: flex;
-                align-items: center;
-                align-self: flex-start;
-                gap: 10px;
-                color: var(--color-green);
-
-                @include hover {
-                    color: var(--color-black);
-                }
-            }
-
-            & p {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                color: var(--color-gray-dark);
-
-                & svg {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
         }
 
         &--recommended {
@@ -97,6 +73,7 @@
             }
 
             & li {
+                margin: 0;
                 @include flex-center;
 
                 & img {
@@ -119,6 +96,17 @@
         @include mobile {
             gap: 20px;
             padding: 20px;
+        }
+
+        & .button--edit {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+
+            @include mobile {
+                top: 20px;
+                right: 20px;
+            }
         }
 
     }
@@ -161,29 +149,18 @@
             text-align: center;
         }
     }
+}
 
-    & .button--edit {
-        position: absolute;
-        top: 30px;
-        right: 30px;
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 30px;
 
-        @include mobile {
-            top: 20px;
-            right: 20px;
-        }
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
     }
 
-    & .contact-info {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px 30px;
-
-        @include tablet {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        @include phone {
-            grid-template-columns: 1fr;
-        }
+    @include phone {
+        grid-template-columns: 1fr;
     }
 }

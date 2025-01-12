@@ -102,7 +102,7 @@
             width: 0;
 
             &:checked~.radiomark {
-                border-color: var(--color-blue);
+                border-color: var(--color-green);
 
                 &::after {
                     opacity: 1;
@@ -110,8 +110,8 @@
             }
 
             &:checked+.checkmark {
-                border-color: var(--color-blue);
-                background: var(--color-blue);
+                border-color: var(--color-green);
+                background: var(--color-green);
 
                 &::after {
                     opacity: 1;
@@ -119,10 +119,10 @@
             }
 
             &:checked+.switchmark {
-                border-color: var(--color-blue);
+                border-color: var(--color-green);
 
                 &::after {
-                    background: var(--color-blue);
+                    background: var(--color-green);
                     transform: translateX(calc(100% + 4px));
                 }
             }
@@ -149,7 +149,7 @@
                 width: 80%;
                 height: 80%;
                 opacity: 0;
-                background: var(--color-blue);
+                background: var(--color-green);
                 border-radius: 50%;
                 transition: all .3s ease;
             }
@@ -221,5 +221,9 @@
         & a {
             text-decoration: underline;
             text-underline-position: under;
+
+            @include hover {
+                color: var(--color-green);
+            }
         }
     }

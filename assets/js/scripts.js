@@ -87,62 +87,58 @@ const init = async () => {
   //news tabs
 
   //modal
+  const modals = document.querySelectorAll(".modal");
+  const closeButtons = document.querySelectorAll(".modal .close");
+  const modalLinks = document.querySelectorAll('a[href^="#"]');
+  const body = document.body;
+
+  // Функция для открытия модального окна
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add("active");
+      body.classList.add("lock"); // Блокируем прокрутку
+    }
+  }
+
+  // Функция для закрытия модального окна
+  function closeModal(modal) {
+    if (modal) {
+      modal.classList.remove("active");
+      body.classList.remove("lock"); // Снимаем блокировку прокрутки
+    }
+  }
+
+  // Закрытие модальных окон при клике на крестик
+  closeButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const modal = this.closest(".modal");
+      closeModal(modal);
+    });
+  });
+
+  // Закрытие модального окна при клике вне его содержимого
+  window.addEventListener("click", function (e) {
+    modals.forEach(modal => {
+      if (e.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  // Обработчик кликов по ссылкам
+  modalLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // Предотвратить стандартное поведение (прокрутку к якорю)
+      const modalId = this.getAttribute("href").substring(1); // Получаем ID из ссылки
+      openModal(modalId);
+    });
+  });
+
+  //modal
 
   
-  //modal share
-
   // validation
-  // checkButton.addEventListener('click', (event) => {
-  //   event.preventDefault(); // Отключаем стандартное поведение кнопки (если форма есть)
-
-  //   const nameRegExp = /^[A-Za-zА-Яа-я ]+$/;
-  //   const phoneRegExp = /^\+\d{2}\(\d{3}\)\d{3}-\d{4}$/;
-  //   const emailRegExp = /^[a-z0-9\.-]+@[a-z0-9_\.-]+\.[a-z]{2,}$/;
-
-  //   const nameInput = document.querySelector('.input__name');
-  //   const phoneInput = document.querySelector('.input__phone');
-  //   const emailInput = document.querySelector('.input__email');
-
-  //   let isValid = true;
-
-  //   // Проверка имени
-  //   if (!nameRegExp.test(nameInput.value)) {
-  //     nameInput.classList.add('error');
-  //     alert('Имя должно содержать только буквы и пробелы!');
-  //     isValid = false;
-  //   } else {
-  //     nameInput.classList.remove('error');
-  //   }
-
-  //   // Проверка телефона
-  //   if (!phoneRegExp.test(phoneInput.value)) {
-  //     phoneInput.classList.add('error');
-  //     alert('Телефон должен быть в формате +XX(XXX)XXX-XXXX');
-  //     isValid = false;
-  //   } else {
-  //     phoneInput.classList.remove('error');
-  //   }
-
-  //   // Проверка email
-  //   if (!emailRegExp.test(emailInput.value)) {
-  //     emailInput.classList.add('error');
-  //     alert('Введите корректный email!');
-  //     isValid = false;
-  //   } else {
-  //     emailInput.classList.remove('error');
-  //   }
-
-  //   // Финальная проверка
-  //   if (isValid) {
-  //     alert('Все поля заполнены корректно!');
-  //   }
-  // });
-  // validation
-
-
-
-
-
   const inputs = document.querySelectorAll('input, select, textarea');
 
   // Добавляем обработчики событий для каждого элемента
@@ -152,6 +148,8 @@ const init = async () => {
   });
 
   function validateInput(element) {
+
+
     let isValid = true;
     const error = element.nextElementSibling;
 
@@ -162,7 +160,6 @@ const init = async () => {
 
     // Email validation
     if (element.type === 'email') {
-      console.log('email', element.value);
       if (!element.value || !/^[a-z0-9\.-]+@[a-z0-9_\.-]+\.[a-z]{2,}$/.test(element.value)) {
         isValid = false;
         element.classList.add('error');
@@ -176,7 +173,6 @@ const init = async () => {
 
     // Phone validation
     if (element.type === 'tel') {
-      console.log('phone', element.value);
       if (!element.value || !/^\+?[0-9]{10,15}$/.test(element.value)) {
         isValid = false;
         element.classList.add('error');
@@ -190,7 +186,6 @@ const init = async () => {
 
     // Password validation
     if (element.type === 'password') {
-      console.log('password', element.value);
       if (!element.value || element.value.length < 6) {
         isValid = false;
         element.classList.add('error');
@@ -206,7 +201,6 @@ const init = async () => {
     const password = document.querySelector('[data-validate="password"]');
     const confirmPassword = document.querySelector('[data-validate="confirm-password"]');
     const errorConfirm = confirmPassword.nextElementSibling;
-    console.log('confirmPassword', confirmPassword.value);
     if (confirmPassword && confirmPassword.value !== password.value) {
       isValid = false;
       confirmPassword.classList.add('error');
@@ -219,7 +213,6 @@ const init = async () => {
 
     // Text input validation
     if (element.type === 'text') {
-      console.log('text', element.value);
       if (element.value.length < 2 || !/^[A-Za-zА-Яа-я ]+$/.test(element.value)) {
         isValid = false;
         element.classList.add('error');
@@ -233,7 +226,6 @@ const init = async () => {
 
     // Select validation
     if (element.tagName === 'SELECT') {
-      console.log('select', element.value);
       if (!element.value) {
         isValid = false;
         element.classList.add('error');
@@ -329,56 +321,25 @@ const init = async () => {
   // select
 };
 
+
+//
+async function generatePDF() {
+  const { jsPDF } = window.jspdf;
+
+  const element = document.getElementById('primary');
+  const canvas = await html2canvas(element);
+
+  const imgData = canvas.toDataURL('image/png');
+  const pdf = new jsPDF('p', 'mm', 'a4');
+
+  const imgWidth = 190; // Ширина изображения в PDF (в мм)
+  const pageHeight = 297; // Высота страницы PDF (в мм)
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
+  pdf.save('page.pdf'); // Сохранение файла
+}
+//
+
 window.onload = init;
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const modals = document.querySelectorAll(".modal");
-  const closeButtons = document.querySelectorAll(".modal .close");
-  const modalLinks = document.querySelectorAll('a[href^="#"]');
-  const body = document.body;
-
-  // Функция для открытия модального окна
-  function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.add("active");
-      body.classList.add("lock"); // Блокируем прокрутку
-    }
-  }
-
-  // Функция для закрытия модального окна
-  function closeModal(modal) {
-    if (modal) {
-      modal.classList.remove("active");
-      body.classList.remove("lock"); // Снимаем блокировку прокрутки
-    }
-  }
-
-  // Закрытие модальных окон при клике на крестик
-  closeButtons.forEach(button => {
-    button.addEventListener("click", function () {
-      const modal = this.closest(".modal");
-      closeModal(modal);
-    });
-  });
-
-  // Закрытие модального окна при клике вне его содержимого
-  window.addEventListener("click", function (e) {
-    modals.forEach(modal => {
-      if (e.target === modal) {
-        closeModal(modal);
-      }
-    });
-  });
-
-  // Обработчик кликов по ссылкам
-  modalLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault(); // Предотвратить стандартное поведение (прокрутку к якорю)
-      const modalId = this.getAttribute("href").substring(1); // Получаем ID из ссылки
-      openModal(modalId);
-    });
-  });
-});
 

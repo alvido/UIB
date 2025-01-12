@@ -1,0 +1,119 @@
+.resume {
+    padding: 60px 0;
+
+    @include mobile {
+        padding: 30px 0;
+    }
+
+    & .inner {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    // & .row {
+    //     @include phone {
+    //         flex-direction: column-reverse;
+    //         align-items: flex-start;
+    //     }
+    // }
+
+    & .column {
+        gap: 10px;
+
+        & ul,
+        & ol {
+            margin: 0;
+            padding: 0 0 0 20px;
+        }
+    }
+
+    & h1 {
+        @include fluid-text(30, 20);
+    }
+
+    & .button--edit {
+        @include tablet {
+            position: static;
+            margin-left: auto;
+        }
+
+        @include phone {
+            font-size: 0;
+            gap: 0;
+        }
+    }
+
+    & .contact-info {
+        flex: 1;
+        max-width: 650px;
+        grid-template-columns: 1fr 1fr;
+
+        @include tablet {
+            max-width: none;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.education {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px clamp(1.25rem, -8.75rem + 15.63vw, 3.75rem);
+    border-top: 1px solid var(--color-gray-light);
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    @include mobile {
+        padding-top: 20px;
+    }
+
+    &__description {
+        width: 290px;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-top: 1px solid var(--color-gray-light);
+
+        @include tablet {
+            width: auto;
+        }
+    }
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include mobile {
+        gap: 20px;
+    }
+
+    &__description {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-top: 1px solid var(--color-gray-light);
+
+        @include mobile {
+            padding-top: 20px;
+        }
+    }
+}

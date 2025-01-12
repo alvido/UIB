@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes"> <!-- Для Android -->
     <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Для iOS -->
 
@@ -151,7 +151,7 @@
                                     </svg>
                                     www.isk.kz
                                 </a>
-                                <p class="city">
+                                <p class="mark dark-gray">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -197,7 +197,7 @@
                                     </svg>
                                     www.isk.kz
                                 </a>
-                                <p class="city">
+                                <p class="mark dark-gray">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -243,7 +243,7 @@
                                     </svg>
                                     www.isk.kz
                                 </a>
-                                <p class="city">
+                                <p class="mark dark-gray">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -289,7 +289,7 @@
                                     </svg>
                                     www.isk.kz
                                 </a>
-                                <p class="city">
+                                <p class="mark dark-gray">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -335,7 +335,7 @@
                                     </svg>
                                     www.isk.kz
                                 </a>
-                                <p class="city">
+                                <p class="mark dark-gray">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -490,7 +490,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+7 (771) 949 99 11">
+                                <a href="tel:+77719499911">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -525,7 +525,7 @@
         <div id="createVacancy" class="modal">
             <div class="modal-content big">
                 <button class="icon close" id="closeModal">Close</button>
-                <form id="registrationForm">
+                <form>
                     <div class="form-group">
                         <label for="company">Название компании</label>
                         <input type="text" id="company">
@@ -536,14 +536,14 @@
                             id="vacancy">Lorem ipsum dolor sit amet consectetur. Tellus vivamus et feugiat netus est facilisi eget at proin. Neque nec quis n|</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="email">Размер заработной платы</label>
+                        <label>Размер заработной платы</label>
                         <div class="input-selary">
                             <input id="min-salary" type="number" placeholder="20 000" min="0">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">График работы</label>
+                        <label>График работы</label>
                         <div class="selary-group">
                             С
                             <div class="custom-select">
@@ -566,15 +566,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="vacancy">Дополнительные условия</label>
-                        <textarea id="vacancy"></textarea>
+                        <label for="additional">Дополнительные условия</label>
+                        <textarea id="additional"></textarea>
                     </div>
-                    <label for="agree" class="custom-input agree">
+                    <div class="custom-input agree">
                         <input type="checkbox" id="agree">
                         <span class="checkmark"></span>
                         <p>С <a href="#">условиями</a> публикации вакансии, а также с <a href="#">политикой
                                 конфиденциальности</a> согласен</p>
-                    </label>
+                    </div>
                     <button class="button" type="submit">Опубликовать вакансию</button>
                 </form>
             </div>

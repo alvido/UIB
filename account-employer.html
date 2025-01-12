@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes"> <!-- Для Android -->
     <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Для iOS -->
 
@@ -164,8 +164,8 @@
                                 <span class="text green">480 000 - 520 000 ₸</span>
                             </div>
                             <div class="column">
-                                <p class="medium">ТОО Silkway Auto Kazakhstan</p>
-                                <p class="city">
+                                <p class="medium dark-gray">ТОО Silkway Auto Kazakhstan</p>
+                                <p class="mark dark-gray">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -188,7 +188,7 @@
                                     Удалить/закрыть вакансию
                                 </a>
                             </div>
-                            <p class="date">Дата публикации: <b>8.10.2024</b></p>
+                            <p class="date dark-gray">Дата публикации: <b>8.10.2024</b></p>
                         </li>
                         <li>
                             <div class="column">
@@ -196,8 +196,8 @@
                                 <span class="text green">480 000 ₸</span>
                             </div>
                             <div class="column">
-                                <p class="medium">ТОО Silkway Auto Kazakhstan</p>
-                                <p class="city">
+                                <p class="medium dark-gray">ТОО Silkway Auto Kazakhstan</p>
+                                <p class="mark dark-gray">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -220,7 +220,7 @@
                                     Удалить/закрыть вакансию
                                 </a>
                             </div>
-                            <p class="date">Дата публикации: <b>8.10.2024</b></p>
+                            <p class="date dark-gray">Дата публикации: <b>8.10.2024</b></p>
                         </li>
                     </ul>
                 </div>
@@ -326,7 +326,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+7 (771) 949 99 11">
+                                <a href="tel:+77719499911">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -361,7 +361,7 @@
         <div id="createVacancy" class="modal">
             <div class="modal-content big">
                 <button class="icon close" id="closeModal">Close</button>
-                <form id="registrationForm">
+                <form>
                     <div class="form-group">
                         <label for="company">Название компании</label>
                         <input type="text" id="company">
@@ -402,14 +402,14 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="vacancy">Дополнительные условия</label>
-                        <textarea id="vacancy"></textarea>
+                        <label for="additional">Дополнительные условия</label>
+                        <textarea id="additional"></textarea>
                     </div>
-                    <label for="agree" class="custom-input agree">
+                    <div class="custom-input agree">
                         <input type="checkbox" id="agree">
                         <span class="checkmark"></span>
                         <p>С <a href="#">условиями</a> публикации вакансии, а также с <a href="#">политикой конфиденциальности</a> согласен</p>
-                    </label>
+                    </div>
                     <button class="button" type="submit">Опубликовать вакансию</button>
                 </form>
             </div>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes"> <!-- Для Android -->
     <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Для iOS -->
 
@@ -173,15 +173,14 @@
                                 <div class="authorization__block active" data-category="category1">
                                     <form id="loginStudent">
                                         <div class="form-group">
-                                            <label for="email">E-mail</label>
-                                            <input type="email" id="email" autocomplete="email" />
-                                            <span class="error" id="emailError" data-error="email"></span>
+                                            <label>E-mail</label>
+                                            <input type="email" autocomplete="email">
+                                            <span class="error" data-error="email"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">Пароль</label>
-                                            <input type="password" name="new-password" id="password"
-                                                autocomplete="new-password" data-validate="password" />
-                                            <span class="error" id="passwordError" data-error="password"></span>
+                                            <label>Пароль</label>
+                                            <input type="password" name="new-password" autocomplete="new-password">
+                                            <span class="error" data-error="password"></span>
                                         </div>
                                         <div class="actions">
                                             <a href="#">Зарегестрироваться</a>
@@ -194,15 +193,14 @@
                                 <div class="authorization__block" data-category="category2">
                                     <form id="loginEmployment">
                                         <div class="form-group">
-                                            <label for="email">E-mail</label>
-                                            <input type="email" id="email" autocomplete="email" />
-                                            <span class="error" id="emailError" data-error="email"></span>
+                                            <label>E-mail</label>
+                                            <input type="email" autocomplete="email">
+                                            <span class="error" data-error="email"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">Пароль</label>
-                                            <input type="password" name="new-password" id="password"
-                                                autocomplete="new-password" data-validate="password" />
-                                            <span class="error" id="passwordError" data-error="password"></span>
+                                            <label>Пароль</label>
+                                            <input type="password" name="new-password" autocomplete="new-password">
+                                            <span class="error" data-error="password"></span>
                                         </div>
                                         <div class="actions">
                                             <a href="#">Зарегестрироваться</a>
@@ -384,7 +382,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+7 (771) 949 99 11">
+                                <a href="tel:+77719499911">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -421,54 +419,52 @@
                 <button class="icon close" id="closeModal">Close</button>
                 <form id="registrationForm">
                     <div class="form-group">
-                        <label for="email">Логин (e-mail)</label>
-                        <input type="email" id="email" autocomplete="email" />
-                        <span class="error" id="emailError" data-error="email"></span>
+                        <label>Логин (e-mail)</label>
+                        <input type="email" autocomplete="email">
+                        <span class="error" data-error="email"></span>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Номер телефона</label>
-                        <input type="tel" id="phone" autocomplete="tel" />
-                        <span class="error" id="phoneError" data-error="tel"></span>
+                        <label>Номер телефона</label>
+                        <input type="tel" autocomplete="tel">
+                        <span class="error" data-error="tel"></span>
                     </div>
                     <div class="form-group">
-                        <label for="password">Пароль</label>
-                        <input type="password" name="new-password" id="password" autocomplete="new-password"
-                            data-validate="password" />
-                        <span class="error" id="passwordError" data-error="password"></span>
+                        <label>Пароль</label>
+                        <input type="password" autocomplete="new-password" data-validate="password">
+                        <span class="error" data-error="password"></span>
                     </div>
                     <div class="form-group">
-                        <label for="confirmPassword">Подтверждение пароля</label>
-                        <input class="" type="password" name="confirm-password" id="confirmPassword"
-                            autocomplete="new-password" data-validate="confirm-password" />
-                        <span class="error" id="confirmPasswordError" data-error="confirm-password">Пожалуйста,
+                        <label>Подтверждение пароля</label>
+                        <input type="password" autocomplete="new-password" data-validate="confirm-password">
+                        <span class="error" data-error="confirm-password">Пожалуйста,
                             заполните поле</span>
                     </div>
                     <div class="form-group">
-                        <label for="fio">ФИО</label>
-                        <input type="text" id="fio" autocomplete="name" />
-                        <span class="error" id="fioError" data-error="text"></span>
+                        <label>ФИО</label>
+                        <input type="text" autocomplete="name">
+                        <span class="error" data-error="text"></span>
                     </div>
                     <div class="form-group">
-                        <label for="course">Курс</label>
+                        <label>Курс</label>
                         <div class="custom-select">
-                            <select id="course" autocomplete="off">
+                            <select autocomplete="off">
                                 <option value="">Выберите курс</option>
                                 <option value="1">Курс 1</option>
                                 <option value="2">Курс 2</option>
                             </select>
                         </div>
-                        <span class="error" id="courseError" data-error="select"></span>
+                        <span class="error" data-error="select"></span>
                     </div>
                     <div class="form-group">
-                        <label for="op">ОП</label>
+                        <label>ОП</label>
                         <div class="custom-select">
-                            <select id="op" autocomplete="off">
+                            <select autocomplete="off">
                                 <option value="">Выберите ОП</option>
                                 <option value="1">ОП 1</option>
                                 <option value="2">ОП 2</option>
                             </select>
                         </div>
-                        <span class="error" id="opError" data-error="select"></span>
+                        <span class="error" data-error="select"></span>
                     </div>
                     <button class="button" type="submit">Зарегистрироваться</button>
                 </form>

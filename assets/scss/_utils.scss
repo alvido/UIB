@@ -67,8 +67,24 @@
     color: var(--color-green);
 }
 
+.dark-gray {
+    color: var(--color-gray-dark);
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
 .medium {
     font-weight: 500;
+}
+
+.bold {
+    font-weight: 700;
 }
 
 .flex-center {
